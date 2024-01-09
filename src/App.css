@@ -1,0 +1,105 @@
+body {
+  background-color:white;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #38444d;
+}
+
+li {
+  float: left;
+}
+
+button {
+  float: right;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 6px;
+  margin-right: 50px;
+}
+
+.Loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+button:hover {
+  background-color:red;
+  color: white;
+}
+
+li a{
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+  color: white;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: red;
+}
+
+
+.CardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+}
+
+img{
+  height: 200px;
+  width: 200px;
+}
+
+.Card {
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  width: 30%;
+  margin-top: 2%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.Container {
+  padding: 40px 16px;
+}
+
+
+.Card:hover {
+  transform: scale(1.05); /* Increase the scale on hover for a zoom effect */
+}
+
+.Card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(141, 137, 137, 0.3); /* Add a semi-transparent overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.Card:hover::before {
+  opacity: 1;
+}
